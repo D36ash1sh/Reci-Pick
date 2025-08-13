@@ -360,3 +360,98 @@ body.dark footer {
         max-width: 200px;
     }
 }
+
+
+/* Mobile devices: 480px and below */
+@media (max-width: 480px) {
+
+    /* Header */
+    header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        padding: 10px 5px;
+        gap: 5px;
+    }
+
+    header > img {
+        width: 50px;
+        height: 50px;
+    }
+
+    header > h1 {
+        font-size: 22px;
+        line-height: 28px;
+        text-align: center;
+    }
+
+    .theme-btn {
+        position: static;
+        margin-top: 5px;
+        padding: 5px 10px;
+        font-size: 0.65rem;
+        min-width: 70px;
+        width: auto;
+    }
+
+    /* Main container */
+    main {
+        padding: 10px 8px;
+        flex-direction: column;
+    }
+
+    /* Form */
+    .add-form {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .add-form > input {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .add-form > button {
+        width: 100%;
+        font-size: 0.75rem;
+    }
+
+    /* Recipe container */
+    .get-recipe-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .get-recipe-container h3 {
+        font-size: 1rem;
+    }
+
+    .get-recipe-container p {
+        font-size: 0.8rem;
+    }
+
+    .get-recipe-container button {
+        width: 100%;
+        padding: 8px 0;
+    }
+
+    /* Recipe output */
+    .recipe-output {
+        padding: 0.75rem;
+        font-size: 0.85rem;
+    }
+
+    /* Footer */
+    footer {
+        padding: 10px 5px;
+        font-size: 0.65rem;
+    }
+}
+
+
