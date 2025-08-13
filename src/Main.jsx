@@ -41,10 +41,11 @@ export default function Main() {
             <form action={addIngredient} className="add-form">
                 <input
                     type="text"
-                    placeholder="E.g. oregano"
+                    placeholder="Min. 5 ingredients (e.g., Salsa)"
                     aria-label="Add ingredient"
                     name="ingredient"
                 />
+                
                 <button>Add ingredient</button>
             </form>
 
