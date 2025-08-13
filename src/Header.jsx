@@ -1,11 +1,11 @@
 import { useTheme } from "./ThemeContext"
-
+import Logo from "../public/pngegg.png"
 export default function Header(){
     const { isDark, toggleTheme } = useTheme();
     
     return (
         <header>
-            <img src="src\assets\pngegg.png" />
+            <img src={Logo} alt="Logo"/>
             <h1>Reci-Pick</h1>
             <button onClick={toggleTheme} className="theme-btn">
                 {isDark ? (
