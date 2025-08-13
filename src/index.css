@@ -19,7 +19,7 @@ body {
 #root {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 body.dark {
@@ -46,8 +46,8 @@ body.dark header {
 }
 
 header>img{
-    width: 53px;
-    height: 52px;
+    width: 73px;
+    height: 72px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -112,7 +112,9 @@ body.dark .theme-btn:hover {
 main{
     padding: 10px 30px;
     flex: 1;
-    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    
 }
 
 .add-form{
@@ -124,7 +126,7 @@ main{
 }
 
 .add-form>input{
-    border-radius: 6px; 
+    border-radius: 10px; 
     border: 1px solid #d1d5db;
     padding: 9px 13px;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
@@ -175,13 +177,13 @@ body.dark .add-form>input::placeholder {
 }
 
 body.dark .add-form>button {
-    background-color: #2d2d2d;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #000000;
     border-color: #666666;
 }
 
 .add-form>button:hover {
-    background: linear-gradient(135deg, #d17557, #c06547);
+    background: linear-gradient(135deg, #e7815f, #ec7c57);
     transform: translateY(-1px);
     box-shadow: 0 4px 8px rgba(209, 117, 87, 0.3);
     border-color: #d17557;
@@ -295,14 +297,14 @@ footer {
     color: #6b7280;
     font-size: 0.75rem;
     transition: color 0.2s ease;
-    flex-shrink: 0;
-    background: inherit;
-    border-top: 1px solid #e5e7eb;
+    
+    background: none;
+    
 }
 
 body.dark footer {
     color: #888888;
-    border-top: 1px solid #374151;
+    
 }
 
 /* Responsive design for small devices */
@@ -310,19 +312,19 @@ body.dark footer {
     header {
         padding: 0 15px;
         justify-content: center;
-        gap: 8px;
+        gap: 10px;
     }
     
     header > h1 {
-        font-size: 24px;
+        font-size: 40px;
         line-height: 50px;
     }
     
     .theme-btn {
-        right: 15px;
+        right: 9px;
         padding: 6px 12px;
         font-size: 0.75rem;
-        gap: 6px;
+        gap: 8px;
         min-width: 80px;
         width: 80px;
         border-radius: 16px;
