@@ -308,150 +308,327 @@ body.dark footer {
 }
 
 /* Responsive design for small devices */
+/* AGGRESSIVE Mobile-First CSS - Forces proper mobile layout */
+
+/* First, override the existing desktop styles for small screens */
 @media (max-width: 768px) {
+    /* Force mobile layout immediately */
+    * {
+        box-sizing: border-box !important;
+        -webkit-text-size-adjust: none !important;
+        text-size-adjust: none !important;
+    }
+    
+    html, body {
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    #root {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 100vh !important;
+    }
+    
+    /* Header - Force bigger size */
     header {
-        padding: 0 15px;
-        justify-content: center;
-        gap: 10px;
+        height: 100px !important;
+        padding: 0 15px !important;
+        gap: 10px !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
     
-    header > h1 {
-        font-size: 40px;
-        line-height: 50px;
-    }
-    
-    .theme-btn {
-        right: 9px;
-        padding: 6px 12px;
-        font-size: 0.75rem;
-        gap: 8px;
-        min-width: 80px;
-        width: 80px;
-        border-radius: 16px;
-    }
-    
-    main {
-        padding: 10px 15px;
-    }
-    
-    .add-form {
-        gap: 8px;
-        margin-top: 30px;
-    }
-    
-    .add-form > input {
-        min-width: 120px;
-    }
-    
-    .add-form > button {
-        width: 120px;
-        font-size: 0.7rem;
-    }
-    
-    .get-recipe-container {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-        padding: 15px 20px;
-    }
-    
-    .get-recipe-container button {
-        width: 100%;
-        max-width: 200px;
-    }
-}
-
-
-/* Mobile devices: 480px and below */
-@media (max-width: 480px) {
-
-    /* Header */
-    header {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: auto;
-        padding: 10px 5px;
-        gap: 5px;
-    }
-
     header > img {
-        width: 50px;
-        height: 50px;
+        width: 50px !important;
+        height: 50px !important;
+        flex-shrink: 0 !important;
+        order: 1 !important;
     }
-
+    
     header > h1 {
-        font-size: 22px;
-        line-height: 28px;
-        text-align: center;
+        font-size: 24px !important;
+        line-height: 1.2 !important;
+        margin: 0 !important;
+        font-weight: 500 !important;
+        text-align: center !important;
+        flex: 1 !important;
+        order: 2 !important;
     }
-
+    
+    /* Theme button - Force proper positioning */
     .theme-btn {
-        position: static;
-        margin-top: 5px;
-        padding: 5px 10px;
-        font-size: 0.65rem;
-        min-width: 70px;
-        width: auto;
+        position: static !important;
+        padding: 8px 12px !important;
+        font-size: 12px !important;
+        min-width: 70px !important;
+        width: 70px !important;
+        height: 36px !important;
+        border-radius: 18px !important;
+        order: 3 !important;
+        flex-shrink: 0 !important;
     }
-
-    /* Main container */
+    
+    .theme-btn svg {
+        width: 14px !important;
+        height: 14px !important;
+    }
+    
+    /* Main content - Force proper spacing */
     main {
-        padding: 10px 8px;
-        flex-direction: column;
+        padding: 20px 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
-
-    /* Form */
+    
+    /* Form - Force vertical layout */
     .add-form {
-        flex-direction: column;
-        gap: 8px;
-        width: 100%;
-        margin-top: 20px;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        margin-top: 30px !important;
+        width: 100% !important;
+        align-items: stretch !important;
     }
-
+    
     .add-form > input {
-        width: 100%;
-        min-width: unset;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: auto !important;
+        padding: 15px 16px !important;
+        font-size: 16px !important;
+        border-radius: 12px !important;
+        box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1) !important;
+        border: 2px solid #d1d5db !important;
+        min-height: 50px !important;
+        box-sizing: border-box !important;
     }
-
+    
+    .add-form > input:focus {
+        border-color: #d17557 !important;
+        box-shadow: 0px 3px 10px 0px rgba(209, 117, 87, 0.25) !important;
+        outline: none !important;
+    }
+    
+    body.dark .add-form > input {
+        background-color: #2d2d2d !important;
+        border-color: #666666 !important;
+        color: #ffffff !important;
+    }
+    
+    body.dark .add-form > input:focus {
+        border-color: #d17557 !important;
+    }
+    
     .add-form > button {
-        width: 100%;
-        font-size: 0.75rem;
+        width: 100% !important;
+        max-width: none !important;
+        padding: 15px 20px !important;
+        font-size: 16px !important;
+        border-radius: 12px !important;
+        font-weight: 600 !important;
+        min-height: 50px !important;
+        box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.15) !important;
+        cursor: pointer !important;
+        box-sizing: border-box !important;
     }
-
-    /* Recipe container */
+    
+    .add-form > button::before {
+        content: "+" !important;
+        margin-right: 6px !important;
+        font-size: 18px !important;
+    }
+    
+    /* Ingredients list - Force better mobile display */
+    ul.ingredients-list {
+        margin: 25px 0 30px 0 !important;
+        padding-left: 0 !important;
+        list-style: none !important;
+        width: 100% !important;
+    }
+    
+    ul.ingredients-list > li {
+        padding: 15px 18px !important;
+        margin-bottom: 12px !important;
+        background: #f9fafb !important;
+        border-radius: 12px !important;
+        border-left: 4px solid #d17557 !important;
+        font-size: 15px !important;
+        line-height: 1.4 !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        min-height: 50px !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    body.dark ul.ingredients-list > li {
+        background: #333333 !important;
+        color: #e5e7eb !important;
+    }
+    
+    /* Get recipe container - Force mobile layout */
     .get-recipe-container {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
-        padding: 10px;
-        text-align: center;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 18px !important;
+        text-align: center !important;
+        padding: 24px 20px !important;
+        border-radius: 16px !important;
+        margin-bottom: 25px !important;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1) !important;
+        border: 2px solid #e5e7eb !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
-
+    
+    body.dark .get-recipe-container {
+        border-color: #444444 !important;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2) !important;
+    }
+    
     .get-recipe-container h3 {
-        font-size: 1rem;
+        font-size: 20px !important;
+        margin: 0 0 10px 0 !important;
+        line-height: 1.3 !important;
+        font-weight: 600 !important;
     }
-
+    
     .get-recipe-container p {
-        font-size: 0.8rem;
+        font-size: 15px !important;
+        line-height: 1.4 !important;
+        margin: 0 0 18px 0 !important;
+        opacity: 0.8 !important;
     }
-
+    
     .get-recipe-container button {
-        width: 100%;
-        padding: 8px 0;
+        width: 100% !important;
+        max-width: none !important;
+        padding: 16px 24px !important;
+        font-size: 16px !important;
+        border-radius: 12px !important;
+        font-weight: 600 !important;
+        min-height: 50px !important;
+        box-shadow: 0px 4px 12px 0px rgba(209, 117, 87, 0.3) !important;
+        cursor: pointer !important;
+        box-sizing: border-box !important;
     }
-
-    /* Recipe output */
+    
+    /* Recipe output - Force readable mobile layout */
     .recipe-output {
-        padding: 0.75rem;
-        font-size: 0.85rem;
+        padding: 20px 18px !important;
+        border-radius: 16px !important;
+        margin-top: 20px !important;
+        margin-bottom: 25px !important;
+        border: 2px solid #e5e7eb !important;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05) !important;
+        font-size: 15px !important;
+        line-height: 1.5 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
-
-    /* Footer */
+    
+    body.dark .recipe-output {
+        border-color: #444444 !important;
+    }
+    
+    .recipe-output h3 {
+        font-size: 20px !important;
+        margin: 0 0 16px 0 !important;
+        line-height: 1.3 !important;
+        font-weight: 600 !important;
+    }
+    
+    .recipe-output p {
+        margin-bottom: 12px !important;
+        line-height: 1.5 !important;
+        font-size: 15px !important;
+    }
+    
+    .recipe-output ul, .recipe-output ol {
+        padding-left: 20px !important;
+        margin-bottom: 16px !important;
+    }
+    
+    .recipe-output li {
+        margin-bottom: 8px !important;
+        line-height: 1.5 !important;
+        font-size: 15px !important;
+    }
+    
+    /* Footer - Force proper mobile display */
     footer {
-        padding: 10px 5px;
-        font-size: 0.65rem;
+        padding: 25px 15px !important;
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+        border-top: 1px solid #e5e7eb !important;
+        margin-top: 30px !important;
+        text-align: center !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    body.dark footer {
+        border-top-color: #444444 !important;
+    }
+    
+    /* Force proper hover states on mobile */
+    .add-form > button:hover,
+    .get-recipe-container button:hover,
+    .theme-btn:hover {
+        transform: translateY(-2px) !important;
     }
 }
 
-
+/* Extra small devices (320px and below) */
+@media (max-width: 320px) {
+    header {
+        height: 90px !important;
+        padding: 0 12px !important;
+    }
+    
+    header > h1 {
+        font-size: 22px !important;
+    }
+    
+    .theme-btn {
+        min-width: 60px !important;
+        width: 60px !important;
+        padding: 6px 10px !important;
+        font-size: 11px !important;
+    }
+    
+    main {
+        padding: 15px 12px !important;
+    }
+    
+    .add-form > input,
+    .add-form > button {
+        padding: 12px 14px !important;
+        font-size: 15px !important;
+    }
+    
+    ul.ingredients-list > li {
+        padding: 12px 15px !important;
+        font-size: 14px !important;
+    }
+    
+    .get-recipe-container {
+        padding: 20px 16px !important;
+    }
+    
+    .get-recipe-container h3 {
+        font-size: 18px !important;
+    }
+    
+    .recipe-output {
+        padding: 16px 15px !important;
+    }
+}
